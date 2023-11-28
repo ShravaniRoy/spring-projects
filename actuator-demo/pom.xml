@@ -28,7 +28,8 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- ADD SUPPORT FOR SPRING BOOT ACTUATOR -->
+		<!-- dependency for spring-boot-actuator -->
+		<!-- health and info can now be accessed as 8080/actuator/health and so on -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -38,6 +39,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+
 	</dependencies>
 
 	<build>
