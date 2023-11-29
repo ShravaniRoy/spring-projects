@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.5</version>
+		<version>3.2.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.shravaniroy.springboot</groupId>
@@ -29,10 +29,16 @@
 		</dependency>
 
 		<!-- dependency for spring-boot-actuator -->
-		<!-- health and info can now be accessed as 8080/actuator/health and so on -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!-- dependency for spring-boot-security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+			<version>3.2.0</version>
 		</dependency>
 
 		<dependency>
