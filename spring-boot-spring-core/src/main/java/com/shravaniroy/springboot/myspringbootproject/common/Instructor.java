@@ -1,4 +1,4 @@
-package com.shravaniroy.springboot.myspringbootproject;
+package com.shravaniroy.springboot.myspringbootproject.common;
 
 public interface Instructor {
 

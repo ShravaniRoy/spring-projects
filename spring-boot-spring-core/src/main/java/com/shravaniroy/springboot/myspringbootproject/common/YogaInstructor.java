@@ -1,5 +1,6 @@
-package com.shravaniroy.springboot.myspringbootproject;
+package com.shravaniroy.springboot.myspringbootproject.common;
 
+import com.shravaniroy.springboot.myspringbootproject.common.Instructor;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,5 +1,6 @@
-package com.shravaniroy.springboot.myspringbootproject;
+package com.shravaniroy.springboot.myspringbootproject.rest;
 
+import com.shravaniroy.springboot.myspringbootproject.common.Instructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
