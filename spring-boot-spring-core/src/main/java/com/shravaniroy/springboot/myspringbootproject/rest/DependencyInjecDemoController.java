@@ -14,7 +14,7 @@ public class DependencyInjecDemoController {
 
     //constructor for dependency injection
     @Autowired
-    public DependencyInjecDemoController (@Qualifier("pianoInstructor") Instructor argumentInstructor){
+    public DependencyInjecDemoController (Instructor argumentInstructor){
         shravanisInstructor = argumentInstructor;
     }
 

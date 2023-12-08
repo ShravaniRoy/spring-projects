@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class PianoInstructor implements Instructor{
     @Override
     public String getDailyExercise(){
-        return "Spend 30 minutes to practice the previous lessons!!";
+        return "Spend 30 minutes to practice the keys!!";
     }
 }
