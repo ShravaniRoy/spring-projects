@@ -14,7 +14,8 @@ public class DependencyInjecDemoController {
 
     //constructor for dependency injection
     @Autowired
-    public DependencyInjecDemoController (Instructor argumentInstructor){
+    public DependencyInjecDemoController (@Qualifier("pianoInstructor") Instructor argumentInstructor){
+        System.out.println("In constructor " + getClass().getSimpleName());
         shravanisInstructor = argumentInstructor;
     }
 
