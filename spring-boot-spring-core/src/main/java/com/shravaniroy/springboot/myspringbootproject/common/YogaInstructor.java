@@ -8,6 +8,6 @@ public class YogaInstructor implements Instructor {
 
     @Override
     public String getDailyExercise(){
-        return "Practice surya namaskar for 108 times!!";
+        return "Practice surya namaskaras for 108 times!!";
     }
 }
