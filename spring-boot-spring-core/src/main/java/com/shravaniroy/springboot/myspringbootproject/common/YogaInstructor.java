@@ -2,7 +2,7 @@ package com.shravaniroy.springboot.myspringbootproject.common;
 
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class YogaInstructor implements Instructor {
 
     public YogaInstructor(){

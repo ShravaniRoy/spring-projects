@@ -11,17 +11,12 @@ public class DependencyInjecDemoController {
 
     //define a private field for the dependency
     private Instructor shravanisInstructor;
-    private Instructor someonesInstructor;
 
     //constructor for dependency injection
     @Autowired
-    public DependencyInjecDemoController (
-            @Qualifier("pianoInstructor") Instructor argumentInstructor,
-            @Qualifier("pianoInstructor") Instructor theAnotherInstructor
-    ){
+    public DependencyInjecDemoController ( @Qualifier("yogi") Instructor argumentInstructor){
         System.out.println("In constructor " + getClass().getSimpleName());
         shravanisInstructor = argumentInstructor;
-        someonesInstructor = theAnotherInstructor;
     }
 
 
@@ -31,10 +26,5 @@ public class DependencyInjecDemoController {
         return shravanisInstructor.getDailyExercise();
     }
 
-    @GetMapping("/check")
-    public String checking(){
-
-        return "Comparing two beans: shravanisInstructor == someonesInstructor " + (shravanisInstructor == someonesInstructor);
-    }
 
 }
