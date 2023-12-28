@@ -1,5 +1,7 @@
 package com.shravaniroy.springboot.myspringbootproject;
 
+import com.shravaniroy.springboot.myspringbootproject.dao.StudentDAOImple;
+import com.shravaniroy.springboot.myspringbootproject.entity.Student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,9 +16,24 @@ public class CruddemoApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(String args[]){ //executed after the beans have been loaded.
+	public CommandLineRunner commandLineRunner(StudentDAOImple studentDAO) {
+
 		return runner -> {
-			System.out.println("Running from command line");
-		}; //Java lambda expression
+			createStudent(studentDAO);
+		};
+	}
+
+	private void createStudent(StudentDAOImple studentDAO) {
+
+		// create the student object
+		System.out.println("Creating new student object ...");
+		Student tempStudent = new Student("Sita", "Ram", "sita@ram.com");
+
+		// save the student object
+		System.out.println("Saving the student ...");
+		studentDAO.save(tempStudent);
+
+		// display id of the saved student
+		System.out.println("Saved student. Generated id: " + tempStudent.getId());
 	}
 }
