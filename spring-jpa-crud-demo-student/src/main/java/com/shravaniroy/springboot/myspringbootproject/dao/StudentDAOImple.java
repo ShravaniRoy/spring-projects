@@ -38,7 +38,7 @@ public class StudentDAOImple implements StudentDAO{
     @Override
     public List<Student> listAll() {
         //create a query
-        TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student", Student.class);
+        TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student order by lastName asc", Student.class); //descending is the default order
 
         //return query result
         return theQuery.getResultList();
