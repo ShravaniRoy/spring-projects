@@ -2,9 +2,12 @@ package com.shravaniroy.springboot.myspringbootproject.dao;
 
 import com.shravaniroy.springboot.myspringbootproject.entity.Student;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class StudentDAOImple implements StudentDAO{
@@ -31,4 +34,15 @@ public class StudentDAOImple implements StudentDAO{
 
         return entityManager.find(Student.class, id); //we are passing entity class, primary key. if not found it returns null
     }
+
+    @Override
+    public List<Student> listAll() {
+        //create a query
+        TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student", Student.class);
+
+        //return query result
+        return theQuery.getResultList();
+    }
+
+
 }
