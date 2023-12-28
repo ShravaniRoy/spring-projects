@@ -19,7 +19,7 @@ public class CruddemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAOImple studentDAO) {
 
 		return runner -> {
-			createMultipleStudent(studentDAO);
+			readStudent(studentDAO);
 		};
 	}
 
@@ -34,7 +34,13 @@ public class CruddemoApplication {
 		studentDAO.save(tempStudent2);
 		studentDAO.save(tempStudent3);
 
+	}
 
+	private void readStudent(StudentDAOImple studentDAO) {
+		//saving these student rows into DB using DAO
+		Student result = studentDAO.readById(2);
+
+		System.out.println(result);
 	}
 
 }

@@ -4,4 +4,6 @@ import com.shravaniroy.springboot.myspringbootproject.entity.Student;
 
 public interface StudentDAO {
     void save(Student theStudent);
+
+    Student readById(Integer id);
 }

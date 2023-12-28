@@ -24,4 +24,11 @@ public class StudentDAOImple implements StudentDAO{
     public void save(Student student) {
         entityManager.persist(student);
     }
+
+    @Override
+   //no  @Transactional annotation here since we are doing a query
+    public Student readById(Integer id) {
+
+        return entityManager.find(Student.class, id); //we are passing entity class, primary key. if not found it returns null
+    }
 }
