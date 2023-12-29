@@ -22,10 +22,29 @@ public class CruddemoApplication {
 
 		return runner -> {
 //			createMultipleStudent(studentDAO);
-//			readStudent(studentDAO);
+			int id = 1;
+			readStudent(studentDAO, id);
 //			queryForStudents(studentDAO);
-			queryByLastname(studentDAO);
+//			queryByLastname(studentDAO);
+			updateQueryStudent(studentDAO);
 		};
+	}
+
+	private void updateQueryStudent(StudentDAOImple studentDAO) {
+		int tempId = 1;
+
+		//get a student by id
+		System.out.println("getting a student by id = tempId as 1");
+		Student tempStudent = readStudent(studentDAO, tempId);
+
+		System.out.println("The current first name of the student is "+ tempStudent.getFirstName());
+		//use update method to change the student first name
+		tempStudent.setFirstName("Siya");
+		studentDAO.updateStudent(tempStudent);
+
+		//display updated student
+		System.out.println("Updated studnet "+ tempStudent);
+
 	}
 
 	private void queryByLastname(StudentDAOImple studentDAO) {
@@ -61,11 +80,12 @@ public class CruddemoApplication {
 
 	}
 
-	private void readStudent(StudentDAOImple studentDAO) {
+	private Student readStudent(StudentDAOImple studentDAO, int tempid) {
 		//saving these student rows into DB using DAO
-		Student result = studentDAO.readById(2);
+		Student result = studentDAO.readById(tempid);
 
-		System.out.println(result);
+//		System.out.println(result);
+		return result;
 	}
 
 
